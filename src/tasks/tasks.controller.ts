@@ -16,6 +16,6 @@ export class TasksController {
 
   @Post()
   createTask(@Body() body) {
-
+    console.log('Body', body);
   }
 }
