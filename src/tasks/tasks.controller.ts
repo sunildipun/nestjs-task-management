@@ -15,7 +15,10 @@ export class TasksController {
   }
 
   @Post()
-  createTask(@Body() body) {
-    console.log('Body', body);
+  createTask(
+    @Body('title') title: string,
+    @Body('description') description: string): Task {
+    console.log('Body', title, description);
+    return this.taskService.createTask(title, description);
   }
 }
